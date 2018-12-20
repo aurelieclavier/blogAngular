@@ -3,4 +3,7 @@
                 'list-group-item-danger': loveIts < 0}">
   <h3>{{ postTitle | uppercase }}</h3>
   <span>{{ postDate | date:"dd/MM/yyyy HH:mm" }}</span>
-  <p>{{ postContent }}</p></li>
+  <p>{{ postContent }}</p>
+  <button (click)="likeIt()" class="btn btn-success">Like</button>
+  <button (click)="dislikeIt()" class="btn btn-danger">Dislike</button>
+</li>
