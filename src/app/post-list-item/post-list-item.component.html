@@ -1,9 +1,14 @@
 <li [ngClass]="{'list-group-item': true,
-                'list-group-item-success': loveIts > 0,
-                'list-group-item-danger': loveIts < 0}">
-  <h3>{{ postTitle | uppercase }}</h3>
-  <span>{{ postDate | date:"dd/MM/yyyy HH:mm" }}</span>
-  <p>{{ postContent }}</p>
-  <button (click)="likeIt()" class="btn btn-success">Like</button>
-  <button (click)="dislikeIt()" class="btn btn-danger">Dislike</button>
+	'list-group-item-success': loveIts > 0,
+	'list-group-item-danger': loveIts < 0}">
+	<div class="col">
+		<h3>{{ postTitle | uppercase }}</h3>
+		<button class="btn btn-default pull-right" (click)="onDeletePost()">
+			<span class="glyphicon glyphicon-trash"></span>
+		</button>
+	</div>
+	<span>{{ postDate | date:"dd/MM/yyyy HH:mm" }}</span>
+	<p>{{ postContent }}</p>
+	<button (click)="likeIt()" class="btn btn-success">Like</button>
+	<button (click)="dislikeIt()" class="btn btn-danger">Dislike</button>
 </li>
