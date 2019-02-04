@@ -10,13 +10,13 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { PostService } from './_services/post.service';
 //Components
 import { AppComponent } from './app.component';
+import { PostComponent } from './post/post.component';
 import { PostListComponent } from './post-list/post-list.component';
 import { PostListItemComponent } from './post-list-item/post-list-item.component';
 import { HeaderComponent } from './header/header.component';
 
 const appRoutes: Routes = [
-  { path: 'posts', component: PostListComponent },
-  //{ path: 'books/new', canActivate: [AuthGuardService], component: PostFormComponent },
+  { path: 'posts', component: PostComponent },
   { path: '', redirectTo: 'posts', pathMatch: 'full' },
   { path: '**', redirectTo: 'posts' }
 ];
@@ -24,6 +24,7 @@ const appRoutes: Routes = [
 @NgModule({
   declarations: [
     AppComponent,
+    PostComponent,
     PostListComponent,
     PostListItemComponent,
     HeaderComponent
