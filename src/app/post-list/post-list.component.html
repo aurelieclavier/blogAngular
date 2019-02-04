@@ -1,6 +1,7 @@
 <h2>Blog Angular</h2>
 <ul class="list-group">
-  <app-post-list-item *ngFor="let post of postList"
+  <app-post-list-item *ngFor="let post of postList;  let i = index"
+  [postId]="i"
   [postTitle]="post.title"
   [postDate]="post.created_at"
   [postContent]="post.content"

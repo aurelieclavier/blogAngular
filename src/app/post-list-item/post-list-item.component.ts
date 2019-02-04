@@ -9,6 +9,7 @@ import { Router } from '@angular/router';
 })
 export class PostListItemComponent implements OnInit {
 
+  @Input() postId: number;
   @Input() postTitle: string;
   @Input() postContent: string;
   @Input() postDate: Date;
@@ -24,8 +25,9 @@ export class PostListItemComponent implements OnInit {
     this.loveIts--;
   }
 
-  onDeletePost(post, item) {
-    this.postService.deletePost(post, item);
+  onDeletePost() {
+    console.log(this.postId);
+    this.postService.deletePost(this.postId);
   }
 
   ngOnInit() {

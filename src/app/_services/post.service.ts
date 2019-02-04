@@ -17,24 +17,28 @@ export class PostService {
   getPosts() {
     this.posts = [
       {
+        id: 1,
         title: 'Article 1',
         content: 'Culpa obsecrans graviter ut inpetraret se ab innocentium graviter gemens innocentium ut ut gemens omni illas omni omni non quieti provincias coalitos proiectare homines pro se perquisitor pro gemens homines.',
         loveIts: 0,
         created_at: new Date()
       },
       {
+        id: 2,
         title: 'Article 2',
         content: 'Culpa obsecrans graviter ut inpetraret se ab innocentium graviter gemens innocentium ut ut gemens omni illas omni omni non quieti provincias coalitos proiectare homines pro se perquisitor pro gemens homines.',
         loveIts: 0,
         created_at: new Date()
       },
       {
+        id: 3,
         title: 'Article 3',
         content: 'Culpa obsecrans graviter ut inpetraret se ab innocentium graviter gemens innocentium ut ut gemens omni illas omni omni non quieti provincias coalitos proiectare homines pro se perquisitor pro gemens homines.',
         loveIts: 0,
         created_at: new Date()
       },
       {
+        id: 4,
         title: 'Article 4',
         content: 'Culpa obsecrans graviter ut inpetraret se ab innocentium graviter gemens innocentium ut ut gemens omni illas omni omni non quieti provincias coalitos proiectare homines pro se perquisitor pro gemens homines.',
         loveIts: 0,
@@ -48,8 +52,10 @@ export class PostService {
     this.posts.push(newPost);
   }
 
-  deletePost(post: Post, item) {
-    const index = this.posts.indexOf(item);
-    this.posts.splice(index);
+  deletePost(id) {
+    let index = id;
+    console.log(index);
+    console.log(this.posts[index]);
+    this.posts.splice(index, 1);
   }
 }
