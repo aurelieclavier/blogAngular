@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-//Services
+import { Post } from './_models/post.model';
 import { PostService } from './_services/post.service';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-root',
@@ -9,15 +10,17 @@ import { PostService } from './_services/post.service';
 })
 export class AppComponent implements OnInit {
 
-  posts: Array<Object>;
+  posts: Post[];
+  postSubscription: Subscription;
 
   constructor(private postService: PostService) {}
 
-  getPosts(): void {
-    this.posts = this.postService.getPosts();
-  }
-
   ngOnInit() {
-    this.getPosts();
+    this.postSubscription = this.postService.postsSubject.subscribe(
+      (posts: Post[]) => {
+        this.posts = posts;
+      }
+    );
+    this.postService.emitPosts();
   }
 }
