@@ -3,12 +3,10 @@
 	'list-group-item-danger': loveIts < 0}">
 	<div class="col">
 		<h3>{{ postTitle | uppercase }}</h3>
-		<button class="btn btn-default pull-right" (click)="onDeletePost()">
-			<span class="glyphicon glyphicon-trash"></span>
-		</button>
 	</div>
 	<span>{{ postDate | date:"dd/MM/yyyy HH:mm" }}</span>
 	<p>{{ postContent }}</p>
 	<button (click)="onLikeIt()" class="btn btn-success">Like</button>
 	<button (click)="onDislikeIt()" class="btn btn-danger">Dislike</button>
+	<button class="btn btn-danger pull-right" (click)="onDeletePost()">Supprimer post</button>
 </li>
