@@ -17,12 +17,12 @@ export class PostListItemComponent implements OnInit {
 
   constructor(private postService: PostService, private router: Router) { }
 
-  likeIt() {
-    this.loveIts++;
+  onLikeIt() {
+    this.postService.likeIt(this.postId);
   }
 
-  dislikeIt() {
-    this.loveIts--;
+  onDislikeIt() {
+    this.postService.dislikeIt(this.postId);
   }
 
   onDeletePost() {

@@ -55,9 +55,19 @@ export class PostService {
     this.emitPosts();
   }
 
-  deletePost(id) {
+  deletePost(id: number) {
     let index = id;
     this.posts.splice(index, 1);
+    this.emitPosts();
+  }
+
+  likeIt(id: number) {
+    this.posts[id].loveIts++;
+    this.emitPosts();
+  }
+
+  dislikeIt(id: number) {
+    this.posts[id].loveIts--;
     this.emitPosts();
   }
 }
