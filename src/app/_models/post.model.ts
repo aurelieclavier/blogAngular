@@ -1,7 +1,7 @@
 export class Post {
     id: number;
-    loveIts: number;
-    created_at: Date;
+    loveIts= 0;
+    created_at: Date = new Date();
     constructor(public title: string, public content: string) {
     }
 }
