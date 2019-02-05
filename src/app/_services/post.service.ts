@@ -52,6 +52,7 @@ export class PostService {
 
   addPost(newPost: Post) {
     this.posts.push(newPost);
+    this.emitPosts();
   }
 
   deletePost(id) {
