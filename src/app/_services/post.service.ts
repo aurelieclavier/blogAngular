@@ -58,5 +58,6 @@ export class PostService {
   deletePost(id) {
     let index = id;
     this.posts.splice(index, 1);
+    this.emitPosts();
   }
 }
