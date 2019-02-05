@@ -18,7 +18,7 @@ import { NewPostComponent } from './new-post/new-post.component';
 
 const appRoutes: Routes = [
   { path: 'posts', component: PostComponent },
-  { path: 'posts/new', component: NewPostComponent },
+  { path: 'new', component: NewPostComponent },
   { path: '', redirectTo: 'posts', pathMatch: 'full' },
   { path: '**', redirectTo: 'posts' }
 ];
