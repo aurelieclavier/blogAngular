@@ -14,9 +14,11 @@ import { PostComponent } from './post/post.component';
 import { PostListComponent } from './post-list/post-list.component';
 import { PostListItemComponent } from './post-list-item/post-list-item.component';
 import { HeaderComponent } from './header/header.component';
+import { NewPostComponent } from './new-post/new-post.component';
 
 const appRoutes: Routes = [
   { path: 'posts', component: PostComponent },
+  { path: 'posts/new', component: NewPostComponent },
   { path: '', redirectTo: 'posts', pathMatch: 'full' },
   { path: '**', redirectTo: 'posts' }
 ];
@@ -27,7 +29,8 @@ const appRoutes: Routes = [
     PostComponent,
     PostListComponent,
     PostListItemComponent,
-    HeaderComponent
+    HeaderComponent,
+    NewPostComponent
   ],
   imports: [
     BrowserModule,
